@@ -1,6 +1,12 @@
 export default function getListStudentIds(arr) {
+  const newArray = [];
   if (typeof (arr) !== typeof ([])) {
     return [];
   }
-  return arr.map((ob) => ob.id);
+  for (const i of arr) {
+    if (i.id) {
+      newArray.push(i.id);
+    }
+  }
+  return newArray.map((i) => i);
 }
