@@ -1,5 +1,5 @@
-import signUpUser from './4-user-promise';
-import uploadPhoto from './5-photo-reject';
+import signUpUser from './4-user-promise.js';
+import uploadPhoto from './5-photo-reject.js';
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled([signUpUser(firstName, lastName), uploadPhoto(fileName)]).then(
@@ -8,10 +8,11 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       promises.forEach((x) => {
         statusValue.push({
           status: x.status,
-          value: x.status === 'fulfilled' ? x.value : x.reason,
+          value: x.status === 'fulfilled' ? x.value : String(x.reason),
         });
       });
       return statusValue;
     },
   );
 }
+console.log(handleProfileSignup("Bob", "Dylan", "bob_dylan.jpg").then((data)=>console.log(data)));
