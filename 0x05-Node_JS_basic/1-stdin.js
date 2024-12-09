@@ -4,7 +4,7 @@ process.stdout.write('Welcome to Holberton School, what is your name?\n', (err) 
 
 process.stdin.on('data', (input) => {
   if (input) {
-    const data = input.toString().trim();
+    const data = input.toString();
     process.stdout.write(`Your name is: ${data}\n`, (err) => {
       if (err) console.log(err);
     });
