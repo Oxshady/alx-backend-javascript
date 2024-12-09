@@ -1,4 +1,4 @@
-process.stdout.write('Welcome to ALX, what is your name?\n');
+process.stdout.write('Welcome to Holberton, what is your name?\n');
 
 process.stdin.on('readable', () => {
   const input = process.stdin.read();
