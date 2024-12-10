@@ -16,9 +16,8 @@ module.exports = function countStudents(path) {
       sweStudentsCounts: 0,
     };
 
-    for (let record of data) { // 'let' here to avoid redeclaration of 'record'
+    for (let record of data) {
       record = record.split(',');
-      // Use 'record[record.length - 1]' if .at() is not supported
       if (record[record.length - 1].toLowerCase() === 'swe') {
         helper.sweStudentsCounts += 1;
         helper.sweStudents.push(record[0]);
