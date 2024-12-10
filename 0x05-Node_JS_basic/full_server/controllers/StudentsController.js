@@ -1,4 +1,4 @@
-import readDatabase from '../utils.js';
+import readDatabase from '../utils';
 
 export default class StudentsController {
   static getAllStudents(req, res) {
@@ -16,15 +16,13 @@ export default class StudentsController {
 
   static getAllStudentsByMajor(req, res) {
     const major = req.params.major.toLowerCase();
-    if (major !== 'cs' && major !== 'swe') {
-      return res.status(500).send('Major parameter must be CS or SWE');
-    }
     readDatabase(process.argv[2]).then((obj) => {
       if (major === 'cs') {
         return res.send(`List: ${obj.csStudents.join(', ')}`);
       } if (major === 'swe') {
         return res.send(`List: ${obj.sweStudents.join(', ')}`);
       }
+      return res.status(500).send('Major parameter must be CS or SWE');
     }).catch((err) => res.status(500).send(err.message));
   }
 }
