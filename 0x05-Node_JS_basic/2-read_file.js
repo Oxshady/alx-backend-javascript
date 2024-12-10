@@ -6,7 +6,7 @@ module.exports = function countStudents(path) {
     if (!data) {
       return;
     }
-    data = data.split('\n');
+    data = data.split('\n').filter((line) => line.trim() !== '');
     data.shift();
     const helper = {
       numberOfStudents: data.length,
@@ -20,10 +20,10 @@ module.exports = function countStudents(path) {
       record = record.split(',');
       if (record[record.length - 1].toLowerCase() === 'swe') {
         helper.sweStudentsCounts += 1;
-        helper.sweStudents.push(record[0]);
+        helper.sweStudents.push(record[0].trim());
       } else if (record[record.length - 1].toLowerCase() === 'cs') {
         helper.csStudentsCounts += 1;
-        helper.csStudents.push(record[0]);
+        helper.csStudents.push(record[0].trim());
       }
     }
 
