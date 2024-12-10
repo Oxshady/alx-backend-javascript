@@ -6,7 +6,7 @@ function countStudents(path) {
     fs.readFile(path, { encoding: 'utf8' }, (err, content) => {
       let final = '';
       if (err) {
-        return reject(new Error('Cannot load the database'));
+        return reject(Error('This is the list of our students Cannot load the database'));
       }
       if (content) {
         const data = content.split('\n').filter((line) => line !== '');
@@ -49,6 +49,8 @@ const app = http.createServer((req, res) => {
     countStudents(process.argv[2]).then((data) => {
       res.write('This is the list of our students\n');
       res.end(data);
+    }).catch(() => {
+      res.end('This is the list of our students\nCannot load the database');
     });
   }
 });
