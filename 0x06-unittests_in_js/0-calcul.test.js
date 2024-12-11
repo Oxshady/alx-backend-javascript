@@ -1,7 +1,7 @@
 const assert = require('assert');
+const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', () => {
-  const calculateNumber = require('./0-calcul');
   it('add correctly', () => {
     assert.equal(calculateNumber(1.2, 1), 2, 'should be 2');
     assert.equal(calculateNumber(1, 1.8), 3, 'should be 3');
