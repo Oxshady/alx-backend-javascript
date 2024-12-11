@@ -1,6 +1,6 @@
-![Unit Testing Illustration](./readmeAssets.jpeg)
-
 # 0x06. Unittests in JS
+
+![Unit Testing Illustration](./readmeAssets.jpeg)
 
 ## Description
 
