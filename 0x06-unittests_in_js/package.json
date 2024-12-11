@@ -1,0 +1,13 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "Unit Testing",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "shadi mahmoud",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^11.0.1"
+  }
+}
