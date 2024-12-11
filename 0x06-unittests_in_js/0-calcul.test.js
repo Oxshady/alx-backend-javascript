@@ -12,3 +12,9 @@ describe('second number rounded', () => {
     assert.equal(calculateNumber(1, 1.2), 2, 'should be 2');
   });
 });
+
+describe('both number rounded', () => {
+  it('add correctly', () => {
+    assert.equal(calculateNumber(1.2, 1.2), 2, 'should be 2');
+  });
+});
